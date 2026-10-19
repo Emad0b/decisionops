@@ -1,0 +1,68 @@
+{
+  "data": "SYNTHETIC daily demand, 3 sites, seeded asymmetric spikes",
+  "protocol": {
+    "train_days": [
+      28,
+      300
+    ],
+    "residual_calibration": [
+      300,
+      360
+    ],
+    "policy_selection": [
+      360,
+      420
+    ],
+    "test": [
+      420,
+      600
+    ]
+  },
+  "economics": {
+    "shortage_unit_cost": 9,
+    "excess_unit_cost": 1,
+    "critical_quantile": 0.9,
+    "daily_budget": 1000
+  },
+  "models": {
+    "seasonal_naive": {
+      "selection": {
+        "mae": 38.81111111111111,
+        "interval_90_coverage": 0.8666666666666667,
+        "mean_policy_cost": 36808.0,
+        "optimised_policy_cost": 19871.0,
+        "shortage_units": 1397,
+        "maximum_allocated": 1000
+      },
+      "test": {
+        "mae": 34.28888888888889,
+        "interval_90_coverage": 0.8777777777777778,
+        "mean_policy_cost": 98718.0,
+        "optimised_policy_cost": 61807.0,
+        "shortage_units": 4884,
+        "maximum_allocated": 1000
+      }
+    },
+    "ridge": {
+      "selection": {
+        "mae": 22.74501589641535,
+        "interval_90_coverage": 0.8333333333333334,
+        "mean_policy_cost": 20801.0,
+        "optimised_policy_cost": 15858.0,
+        "shortage_units": 997,
+        "maximum_allocated": 1000
+      },
+      "test": {
+        "mae": 20.325912787402647,
+        "interval_90_coverage": 0.8870370370370371,
+        "mean_policy_cost": 63198.0,
+        "optimised_policy_cost": 51493.0,
+        "shortage_units": 3925,
+        "maximum_allocated": 1000
+      }
+    }
+  },
+  "validation_mae_selected": "ridge",
+  "validation_cost_selected": "ridge",
+  "limitations": "Empirical residual scenarios assume stable errors; correlated sites retained per-day. Intervals are empirical, not guaranteed conformal coverage. Cost units hypothetical."
+}
