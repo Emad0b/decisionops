@@ -1,5 +1,7 @@
 # DecisionOps
 
+DecisionOps helps you decide how to divide limited capacity when demand is uncertain. Use it to compare allocation plans and see how they balance the cost of spare capacity against the cost of shortages.
+
 Temporal demand forecasting and cost-aware capacity planning.
 
 Translate uncertain demand forecasts into capacity allocations under asymmetric costs and a shared resource limit.
